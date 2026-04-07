@@ -1,0 +1,112 @@
+/* 🔹 FOOTER MAIN */
+.footer {
+  background: linear-gradient(to right, #1e293b, #334155, #475569);
+  color: #f1f5f9;
+  margin-top: 80px;
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* TITLE */
+.footer-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.footer-text {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.footer-contact {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.footer-contact p {
+  margin-bottom: 5px;
+}
+
+/* HEADINGS */
+.footer-heading {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* SHOP 2 COLUMN */
+.footer-shop {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;   /* 👈 keeps columns centered */
+  gap: 8px 30px;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* LINKS */
+.footer-links {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+/* LINK HOVER */
+.footer-link {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: orange;
+}
+
+/* SOCIAL */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer-social span:hover {
+  transform: scale(1.2);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* 🔥 RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
