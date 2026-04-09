@@ -14,6 +14,8 @@ import SearchProduct from '../pages/SearchProduct'
 import Contact from '../pages/Contact'
 import AboutUs from '../pages/AboutUs'
 import CategoryPage from '../pages/CategoryPage'
+import Profile from '../pages/Profile'
+
 
 const router = createBrowserRouter([
     {
@@ -66,6 +68,10 @@ const router = createBrowserRouter([
                 path : "search",
                 element : <SearchProduct/>
             },
+            {
+    path: "profile",
+    element: <Profile/>
+},
             {
                 path : "admin-panel",
                 element : <AdminPanel/>,
