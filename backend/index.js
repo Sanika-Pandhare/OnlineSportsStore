@@ -5,6 +5,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const connectDB = require('./config/db')
+const razorpay = require('./config/razorpay')
 const router = require('./routes')
 
 

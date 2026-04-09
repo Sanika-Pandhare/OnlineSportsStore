@@ -1,17 +1,24 @@
 const mongoose = require('mongoose')
 
 const addToCart = mongoose.Schema({
-   productId : {
-        ref : 'product',
-        type : String,
-   },
-   quantity : Number,
-   userId : String,
-},{
-    timestamps : true
+    productId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'product',   // now this works properly
+        required: true
+    },
+    quantity: {
+        type: Number,
+        default: 1
+    },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',
+        required: true
+    }
+}, {
+    timestamps: true
 })
 
-
-const addToCartModel = mongoose.model("addToCart",addToCart)
+const addToCartModel = mongoose.model("addToCart", addToCart)
 
 module.exports = addToCartModel
