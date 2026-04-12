@@ -41,6 +41,9 @@ const UploadProduct = ({ onClose, fetchData }) => {
       for (let i = 0; i < files.length; i++) {
         const res = await uploadImage(files[i])
 
+        console.log("res.secure_url",res.secure_url);
+        
+
         if (res.secure_url) {
           uploadedImages.push(res.secure_url)
         } else {
@@ -56,6 +59,8 @@ const UploadProduct = ({ onClose, fetchData }) => {
       toast.success("Images uploaded")
 
     } catch (err) {
+      console.log("error :",err);
+      
       toast.error("Upload failed")
     }
 

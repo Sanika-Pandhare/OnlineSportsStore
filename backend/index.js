@@ -8,8 +8,6 @@ const connectDB = require('./config/db')
 const razorpay = require('./config/razorpay')
 const router = require('./routes')
 
-
-
 const app = express()
 app.use(cors({
     origin : process.env.FRONTEND_URL,

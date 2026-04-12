@@ -23,17 +23,44 @@ const Footer = () => {
 
         {/* SHOP */}
         <div>
-          <h3 className="footer-heading">Shop</h3>
+          <h3 className="footer-heading">    Shop</h3>
 
           <ul className="footer-shop">
-            <li>Cricket</li>
-            <li>Team Sports</li>
-            <li>Athletics</li>
-            <li>Boxing</li>
-            <li>Fitness</li>
-            <li>Training</li>
-            <li>Indoor Games</li>
-            <li>Accessories</li>
+            <li>
+              <Link to="product-category" className="footer-link">Cricket</Link>
+              </li>
+            <li>
+              <Link to="product-category" className="footer-link">Team Sports
+              </Link>
+              </li>
+            <li>
+              <Link to="product-category" className="footer-link">
+              Athletics
+              
+              </Link>
+              </li>
+
+
+            <li>
+              <Link to="product-category" className="footer-link">Boxing</Link>
+            </li>
+            <li><Link to="product-category" className="footer-link">Fitness</Link></li>
+            
+            <li><Link to="product-category" className="footer-link">
+                Training
+              </Link></li>
+
+
+            <li><Link to="product-category" className="footer-link">
+                Indoor Games
+              </Link></li>
+            <li><Link to="product-category" className="footer-link">
+                Accessories
+              </Link></li>
+
+              <li><Link to="product-category" className="footer-link">
+                Boys Clothes
+              </Link></li>
           </ul>
         </div>
 
@@ -43,14 +70,18 @@ const Footer = () => {
 
           <ul className="footer-links">
             <li>
-              <Link to="/about" className="footer-link">
-                About Us
+              <Link to="/aboutus" className="footer-link">
+                aboutus
               </Link>
             </li>
-            <li>Careers</li>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
+        
+            <li>
+              <Link to="/contact" className="footer-link">
+                Contact
+              </Link>
+              </li>
+            
+          
           </ul>
         </div>
 
