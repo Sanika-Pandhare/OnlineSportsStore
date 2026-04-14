@@ -73,6 +73,22 @@ const menuData = {
     { id: 49, name: "Tennis Racket", subCategory: "Rackets" },
     { id: 50, name: "Badminton Racket", subCategory: "Rackets" },
     { id: 51, name: "Ghungru Kathi", subCategory: "Traditional Equipment" }
+  ],
+
+  "Boys Shoes": [
+    { id: 52, name: "Sports Running Shoes", subCategory: "Footwear" },
+    { id: 53, name: "Cricket Shoes", subCategory: "Footwear" },
+    { id: 54, name: "Football Studs", subCategory: "Footwear" },
+    { id: 55, name: "Casual Sneakers", subCategory: "Footwear" },
+    { id: 56, name: "Training Shoes", subCategory: "Footwear" }
+  ],
+
+  "Jersey": [
+    { id: 63, name: "Cricket Jersey", subCategory: "Sportswear" },
+    { id: 64, name: "Football Jersey", subCategory: "Sportswear" },
+    { id: 65, name: "Basketball Jersey", subCategory: "Sportswear" },
+    { id: 66, name: "Training T-Shirt", subCategory: "Sportswear" },
+    { id: 67, name: "Custom Team Jersey", subCategory: "Sportswear" }
   ]
 
 };

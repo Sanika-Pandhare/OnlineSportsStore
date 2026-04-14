@@ -112,6 +112,7 @@ import AboutUs from '../pages/AboutUs'
 import CategoryPage from '../pages/CategoryPage'
 import Profile from '../pages/Profile'
 import Checkout from "../pages/Checkout"
+import Wishlist from "../pages/Wishlist"
 
 const router = createBrowserRouter([
     {
@@ -130,6 +131,10 @@ const router = createBrowserRouter([
                 path: "aboutus",
                 element: <AboutUs />
             },
+            {
+                        path: "wishlist",
+                         element: <Wishlist />
+                                   },
             {
                 path: "category/:categoryName",   // ✅ FIXED (removed /)
                 element: <CategoryPage />
@@ -182,6 +187,8 @@ const router = createBrowserRouter([
                         path: "all-products",
                         element: <AllProducts />
                     }
+                    
+                    
                 ]
             },
         ]

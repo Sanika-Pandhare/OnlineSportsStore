@@ -11,15 +11,11 @@ import getWishlist from '../helpers/getWishlist'
 const HorizontalCardProduct = ({category, heading}) => {
 
     const [data,setData] = useState([])
-    const context = useContext(Context) || {}
-    const fetchWishlistCount = context?.fetchWishlistCount || (()=>{})
+    const { fetchWishlistCount } = useContext(Context)
     const [loading,setLoading] = useState(true)
+    const [loadingWishlist, setLoadingWishlist] = useState(false) // 🔥 FIX
     const loadingList = new Array(10).fill(null)
-
-    // ✅ ALWAYS SAFE ARRAY
     const [wishlistIds, setWishlistIds] = useState([])
-
-    const [loadingWishlist,setLoadingWishlist] = useState(false)
 
     const scrollElement = useRef()
 
@@ -39,7 +35,7 @@ const HorizontalCardProduct = ({category, heading}) => {
         fetchData()
     },[category])
 
-    // ✅ FETCH ONLY ONCE
+    // 🔥 FETCH WISHLIST
     const fetchWishlist = async () => {
         try{
             const res = await getWishlist()
@@ -47,7 +43,6 @@ const HorizontalCardProduct = ({category, heading}) => {
             setWishlistIds(ids)
         }catch(err){
             console.log(err)
-            setWishlistIds([]) // safety
         }
     }
 
@@ -70,11 +65,11 @@ const HorizontalCardProduct = ({category, heading}) => {
 
             <div className='flex items-center gap-4 overflow-x-scroll scrollbar-none' ref={scrollElement}>
 
-                <button className='bg-white shadow-md rounded-full p-1 absolute left-0 hidden md:block z-10' onClick={scrollLeft}>
+                <button className='bg-white shadow-md rounded-full p-1 absolute left-0 hidden md:block' onClick={scrollLeft}>
                     <FaAngleLeft/>
                 </button>
 
-                <button className='bg-white shadow-md rounded-full p-1 absolute right-0 hidden md:block z-10' onClick={scrollRight}>
+                <button className='bg-white shadow-md rounded-full p-1 absolute right-0 hidden md:block' onClick={scrollRight}>
                     <FaAngleRight/>
                 </button>
 
@@ -86,8 +81,7 @@ const HorizontalCardProduct = ({category, heading}) => {
                     ) : (
                         data.map((product,index)=>{
 
-                            // ✅ FIXED SAFE CHECK
-                            const isLiked = wishlistIds?.includes(product?._id)
+                            const isLiked = wishlistIds.includes(product?._id)
 
                             return(
                                 <Link 
@@ -96,16 +90,18 @@ const HorizontalCardProduct = ({category, heading}) => {
                                     className='w-[180px] min-w-[180px] bg-white rounded-md shadow-sm overflow-hidden'
                                 >
 
+                                    {/* IMAGE */}
                                     <div className='relative h-[200px] w-full bg-gray-100'>
 
                                         {/* ❤️ LIKE BUTTON */}
                                         <button
-                                            disabled={loadingWishlist}
+                                            disabled={loadingWishlist}   // 🔥 FIX
                                             onClick={async (e)=>{
                                                 e.preventDefault()
                                                 e.stopPropagation()
 
-                                                if(loadingWishlist) return
+                                                if(loadingWishlist) return  // 🔥 STOP MULTIPLE CALLS
+
                                                 setLoadingWishlist(true)
 
                                                 try{
@@ -113,9 +109,8 @@ const HorizontalCardProduct = ({category, heading}) => {
 
                                                     if(res?.success){
 
-                                                        // ✅ LOCAL UPDATE ONLY (NO API LOOP)
                                                         setWishlistIds((prev)=>{
-                                                            if(prev?.includes(product._id)){
+                                                            if(prev.includes(product._id)){
                                                                 return prev.filter(id => id !== product._id)
                                                             }else{
                                                                 return [...prev, product._id]
@@ -123,6 +118,7 @@ const HorizontalCardProduct = ({category, heading}) => {
                                                         })
 
                                                         fetchWishlistCount()
+                                                        fetchWishlist()
                                                     }
 
                                                 }catch(err){
@@ -162,6 +158,7 @@ const HorizontalCardProduct = ({category, heading}) => {
                                         />
                                     </div>
 
+                                    {/* DETAILS */}
                                     <div className='p-2'>
 
                                         <p className='text-sm font-medium truncate'>

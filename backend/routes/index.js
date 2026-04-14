@@ -26,6 +26,10 @@ const deleteProductController = require('../controller/product/deleteProduct')
 const createOrder = require('../controller/payment/createOrder')
 const verifyPayment = require('../controller/payment/verifyPayment')
 const getUserOrders = require('../controller/order/getUserOrders')
+const toggleWishlist = require("../controller/wishlist/toggleWishlist")
+const getWishlist = require("../controller/wishlist/getWishlist")
+
+
 
 
 router.get("/my-orders", authToken, getUserOrders)
@@ -59,6 +63,9 @@ router.get("/countAddToCartProduct",authToken,countAddToCartProduct)
 router.get("/view-card-product",authToken,addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
+router.post("/wishlist/toggle", authToken, toggleWishlist)
+router.get("/wishlist", authToken, getWishlist)
+
 
 
 

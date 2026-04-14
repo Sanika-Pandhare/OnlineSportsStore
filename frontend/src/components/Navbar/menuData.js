@@ -45,7 +45,7 @@ const menuData = {
     { id: 30, name: "Hula Hoop", subCategory: "Fitness Tools" }
   ],
 
-  "Training": [
+  "Traning": [
     { id: 31, name: "Agility Ladder", subCategory: "Speed Training" },
     { id: 32, name: "Speed Hurdles", subCategory: "Speed Training" },
     { id: 33, name: "Training Hurdle (Adjustable)", subCategory: "Training" },
@@ -75,16 +75,35 @@ const menuData = {
     { id: 51, name: "Ghungru Kathi", subCategory: "Traditional Equipment" }
   ],
 
-  "Boys Clothes": [
-  { id: 53, name: "T-Shirts", subCategory: "Top Wear" },
-  { id: 54, name: "Shirts", subCategory: "Top Wear" },
-  { id: 55, name: "Jeans", subCategory: "Bottom Wear" },
-  { id: 56, name: "Shorts", subCategory: "Bottom Wear" },
-  { id: 57, name: "Jackets", subCategory: "Winter Wear" },
-  { id: 58, name: "Sweatshirts", subCategory: "Winter Wear" },
-  { id: 59, name: "Track Pants", subCategory: "Sports Wear" },
-  { id: 60, name: "Ethnic Wear", subCategory: "Traditional" }
-]
+  "Boys Shoes": [
+    { id: 52, name: "Sports Running Shoes", subCategory: "Footwear" },
+    { id: 53, name: "Cricket Shoes", subCategory: "Footwear" },
+    { id: 54, name: "Football Studs", subCategory: "Footwear" },
+    { id: 55, name: "Casual Sneakers", subCategory: "Footwear" },
+    { id: 56, name: "Training Shoes", subCategory: "Footwear" }
+  ],
+
+  "Boys Clothes":[
+    { id: 57, name: "Sports Running Shoes", subCategory: "Footwear" },
+    { id: 58, name: "Cricket Shoes", subCategory: "Footwear" },
+    { id: 59, name: "Football Studs", subCategory: "Footwear" },
+    { id: 60, name: "Casual Sneakers", subCategory: "Footwear" },
+    { id: 61, name: "Training Shoes", subCategory: "Footwear" },
+    { id: 62, name: "Training Shoes", subCategory: "Footwear" }
+
+
+
+  ],
+
+  "Jersey": [
+    { id: 63, name: "Cricket Jersey", subCategory: "Sportswear" },
+    { id: 64, name: "Football Jersey", subCategory: "Sportswear" },
+    { id: 65, name: "Basketball Jersey", subCategory: "Sportswear" },
+    { id: 66, name: "Training T-Shirt", subCategory: "Sportswear" },
+    { id: 67, name: "Custom Team Jersey", subCategory: "Sportswear" }
+  ]
+
+
 
 };
 
